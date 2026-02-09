@@ -8,17 +8,17 @@ npm install -g angular-cli-ghpages
 
 # Create new repo on github
 
-<username>.github.io
-Here username is your github username
+username.github.io<br>
+Here username is your github username<br>
 
-- Then run github command to add repo in your project portfolio
-- git init
-- git add .
-- git commit -m "Initial portfolio"
-- git branch -m main
-- git remote set-url origin https://<token>:x-oauth-basic@github.com/vkrntteotia/vkrntteotia.github.io.git
-- git push -u origin main (if not work) or git push --force origin main
-- git pull origin main
+- Then run github command to add repo in your project portfolio<br>
+- git init<br>
+- git add .<br>
+- git commit -m "Initial portfolio"<br>
+- git branch -m main<br>
+- git remote set-url origin https://token:x-oauth-basic@github.com/vkrntteotia/vkrntteotia.github.io.git<br>
+- git push -u origin main (if not work) or git push --force origin main<br>
+- git pull origin main<br>
 
 # Already Install angular-cli-ghpages Now Deploy to github
 
