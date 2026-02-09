@@ -16,7 +16,7 @@ Here username is your github username<br>
 - git add .<br>
 - git commit -m "Initial portfolio"<br>
 - git branch -m main<br>
-- git remote set-url origin https://"<token>":x-oauth-basic@github.com/vkrntteotia/vkrntteotia.github.io.git<br>
+- git remote set-url origin https://token:x-oauth-basic@github.com/vkrntteotia/vkrntteotia.github.io.git<br>
 - git push -u origin main (if not work) or git push --force origin main<br>
 - git pull origin main<br>
 
