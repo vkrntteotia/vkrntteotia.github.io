@@ -17,12 +17,12 @@ import { Meta, Title } from '@angular/platform-browser';
     ContactComponent,
   ],
   template: `
-    <app-hero />
-    <app-about />
-    <app-skills />
-    <app-experience />
-    <app-projects />
-    <app-contact />
+    <app-hero></app-hero>
+    <app-about></app-about>
+    <app-skills></app-skills>
+    <app-experience></app-experience>
+    <app-projects></app-projects>
+    <app-contact></app-contact>
   `,
 })
 export class HomeComponent {

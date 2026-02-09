@@ -16,6 +16,10 @@ import { HeaderComponent } from './components/header/header.component';
 })
 export class AppComponent {
   darkMode = false;
+  title: any;
+  constructor() {
+    console.log('appComponent');
+  }
   toggleDark() {
     this.darkMode = !this.darkMode;
   }
