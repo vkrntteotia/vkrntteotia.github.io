@@ -16,6 +16,7 @@ import { RouterLink } from '@angular/router';
       <nav style="display:flex;gap:20px;align-items:center">
         <a routerLink="/">Home</a>
         <a routerLink="/blog">Blog</a>
+        <a routerLink="/case-studies">Case Studies</a>
         <button (click)="toggle.emit()">🌓</button>
       </nav>
     </div>

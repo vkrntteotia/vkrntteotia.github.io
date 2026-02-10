@@ -1,3 +1,11 @@
+---
+title: Deploy Angular Apps to GitHub Pages with angular-cli-ghpages
+description: Easily deploy your Angular applications to GitHub Pages using angular-cli-ghpages. Automate the build and deployment process directly from the Angular CLI, making it simple to host your app online with a single command...
+date: 2026-02-01
+tags: angular, pagination, markdown
+slug: deploy-portfolio-github
+---
+
 # create angular project
 
 ng new portfolio --standalone --routing --style=css
