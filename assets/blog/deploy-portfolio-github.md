@@ -6,9 +6,17 @@ tags: angular, pagination, markdown
 slug: deploy-portfolio-github
 ---
 
+## 📦 Prerequisites
+
+- Node.js installed<br>
+- Angular CLI installed<br>
+- A GitHub account<br>
+- An existing Angular project<br>
+
 # create angular project
 
-ng new portfolio --standalone --routing --style=css
+ng new portfolio --standalone --routing --style=css<br>
+cd portfolio
 
 # Install angular-cli-ghpages
 
