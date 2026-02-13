@@ -11,7 +11,7 @@ tags:
   - Angular Routing
   - Web Development
   - TypeScript
-slug: "100-mid-level-angular-interview-questions-answers-2026"
+slug: 100-mid-level-angular-interview-mcqs-2026
 ---
 
 # 100 Mid-Level Angular Interview MCQs (2026 Edition)

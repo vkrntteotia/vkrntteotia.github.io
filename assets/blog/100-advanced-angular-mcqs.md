@@ -12,7 +12,7 @@ tags:
   - Angular Architecture
   - Web Development
   - Frontend Engineering
-slug: "100-advanced-angular-mcqs-with-detailed-explanations-2026"
+slug: 100-advanced-angular-mcqs
 ---
 
 # 100 Advanced Angular MCQs with Answers (2026 Edition)

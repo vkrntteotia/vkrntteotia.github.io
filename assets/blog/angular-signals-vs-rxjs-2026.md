@@ -10,7 +10,7 @@ tags:
   - TypeScript
   - Reactive Programming
   - Web Development
-slug: "angular-signals-vs-rxjs-2026-guide"
+slug: angular-signals-vs-rxjs-2026
 ---
 
 # 🧠 Angular Signals vs RxJS: When and How to Use Them (2026 Guide)

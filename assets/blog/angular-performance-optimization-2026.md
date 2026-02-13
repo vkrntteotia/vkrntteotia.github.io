@@ -10,7 +10,7 @@ tags:
   - Web Performance
   - Angular Signals
   - RxJS
-slug: "angular-performance-optimization-guide-2026"
+slug: angular-performance-optimization-2026
 ---
 
 # 🔥 Angular Performance Optimization Guide (2026 Edition)

@@ -10,7 +10,7 @@ tags:
   - RxJS
   - Angular Signals
   - Software Engineering
-slug: "angular-interview-guide-2026-top-questions"
+slug: angular-interview-guide-2026
 ---
 
 # 🎯 Angular Interview Guide (2026): Top Questions & Concepts You Must Know

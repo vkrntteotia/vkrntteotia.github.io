@@ -10,7 +10,7 @@ tags:
   - Scalable Applications
   - Software Architecture
   - Micro Frontends
-slug: "building-scalable-enterprise-applications-angular-2026"
+slug: building-scalable-enterprise-applications-angular-2026
 ---
 
 # 🏗 Building Scalable Enterprise Applications with Angular (2026 Guide)

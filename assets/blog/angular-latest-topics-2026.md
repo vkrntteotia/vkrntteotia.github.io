@@ -9,7 +9,7 @@ tags:
   - Web Development
   - RxJS
   - JavaScript Frameworks
-slug: "angular-latest-features-2026"
+slug: angular-latest-topics-2026
 ---
 
 # 🚀 What's New in Angular: A Comprehensive Guide to the Latest Topics (2026)
