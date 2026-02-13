@@ -1,7 +1,7 @@
 ---
-title: "100 Advanced Angular MCQs with Detailed Explanations (2026 Edition)"
-description: "Master Angular with 100 advanced-level MCQs covering Signals, Change Detection, RxJS, Architecture, Performance, Security, SSR, and Testing. Includes detailed explanations for Sections 2–5 to help senior developers and interview candidates."
-date: "2026-02-13"
+title: 100 Advanced Angular MCQs with Detailed Explanations (2026 Edition)
+description: Master Angular with 100 advanced-level MCQs covering Signals, Change Detection, RxJS, Architecture, Performance, Security, SSR, and Testing. Includes detailed explanations for Sections 2–5 to help senior developers and interview candidates.
+date: 2026-02-13
 tags:
   - Angular
   - Angular Interview Questions

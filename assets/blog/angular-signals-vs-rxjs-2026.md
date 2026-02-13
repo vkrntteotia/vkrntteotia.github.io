@@ -1,7 +1,7 @@
 ---
-title: "Angular Signals vs RxJS: When and How to Use Them (2026 Guide)"
-description: "Understand the key differences between Angular Signals and RxJS in 2026. Learn when to use Signals for UI state, when to use RxJS for async streams, and how to combine both for scalable Angular applications."
-date: "2026-02-13"
+title: Angular Signals vs RxJS When and How to Use Them (2026 Guide)
+description: Understand the key differences between Angular Signals and RxJS in 2026. Learn when to use Signals for UI state, when to use RxJS for async streams, and how to combine both for scalable Angular applications.
+date: 2026-02-13
 tags:
   - Angular
   - Angular Signals

@@ -1,7 +1,7 @@
 ---
-title: "What's New in Angular: Latest Features & Trends in 2026"
-description: "Explore the latest Angular updates including standalone components, Angular Signals, performance improvements, RxJS 8 integration, and modern best practices for scalable frontend development in 2026."
-date: "2026-02-13"
+title: What's New in Angular Latest Features & Trends in 2026
+description: Explore the latest Angular updates including standalone components, Angular Signals, performance improvements, RxJS 8 integration, and modern best practices for scalable frontend development in 2026.
+date: 2026-02-13
 tags:
   - Angular
   - Frontend Development

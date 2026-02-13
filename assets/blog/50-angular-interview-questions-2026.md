@@ -1,7 +1,7 @@
 ---
-title: "50+ Angular Interview Questions and Answers (2026 Edition)"
-description: "Comprehensive list of 50+ Angular interview questions and answers covering beginner, intermediate, and advanced topics including Signals, RxJS, change detection, performance optimization, architecture, and latest Angular features for 2026."
-date: "2026-02-13"
+title: 50+ Angular Interview Questions and Answers (2026 Edition)
+description: Comprehensive list of 50+ Angular interview questions and answers covering beginner, intermediate, and advanced topics including Signals, RxJS, change detection, performance optimization, architecture, and latest Angular features for 2026.
+date: 2026-02-13
 tags:
   - Angular
   - Angular Interview Questions

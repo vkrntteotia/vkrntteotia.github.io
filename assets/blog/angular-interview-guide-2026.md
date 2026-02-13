@@ -1,7 +1,7 @@
 ---
-title: "Angular Interview Guide 2026: Top Questions, Answers & Preparation Strategy"
-description: "Comprehensive Angular interview guide covering core concepts, change detection, Signals, RxJS, performance optimization, architecture patterns, security, and latest Angular features to help you crack interviews in 2026."
-date: "2026-02-13"
+title: Angular Interview Guide 2026 Top Questions, Answers & Preparation Strategy
+description: Comprehensive Angular interview guide covering core concepts, change detection, Signals, RxJS, performance optimization, architecture patterns, security, and latest Angular features to help you crack interviews in 2026.
+date: 2026-02-13
 tags:
   - Angular
   - Angular Interview Questions

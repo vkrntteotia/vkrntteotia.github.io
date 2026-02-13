@@ -1,7 +1,7 @@
 ---
-title: "Angular Performance Optimization Guide (2026 Edition)"
-description: "Learn advanced Angular performance optimization techniques including OnPush change detection, Signals, lazy loading, SSR, bundle size reduction, and best practices to build high-performance Angular applications in 2026."
-date: "2026-02-13"
+title: Angular Performance Optimization Guide (2026 Edition)
+description: Learn advanced Angular performance optimization techniques including OnPush change detection, Signals, lazy loading, SSR, bundle size reduction, and best practices to build high-performance Angular applications in 2026.
+date: 2026-02-13
 tags:
   - Angular
   - Performance Optimization

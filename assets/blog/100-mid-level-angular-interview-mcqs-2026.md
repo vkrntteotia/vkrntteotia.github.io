@@ -1,7 +1,7 @@
 ---
-title: "100 Mid-Level Angular Interview Questions and Answers (2026 Edition)"
-description: "Prepare for your Angular interview with 100 carefully selected mid-level Angular MCQs covering components, RxJS, routing, state management, performance optimization, and testing. Perfect for 2–5 years experienced developers."
-date: "2026-02-13"
+title: 100 Mid-Level Angular Interview Questions and Answers (2026 Edition)
+description: Prepare for your Angular interview with 100 carefully selected mid-level Angular MCQs covering components, RxJS, routing, state management, performance optimization, and testing. Perfect for 2–5 years experienced developers.
+date: 2026-02-13
 tags:
   - Angular
   - Angular Interview Questions

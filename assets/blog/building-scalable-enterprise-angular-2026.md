@@ -1,7 +1,7 @@
 ---
-title: "Building Scalable Enterprise Applications with Angular (2026 Guide)"
-description: "Learn how to architect and scale enterprise-grade Angular applications using feature-based structure, standalone components, smart vs dumb components, state management strategies, micro-frontends, and modern best practices in 2026."
-date: "2026-02-13"
+title: Building Scalable Enterprise Applications with Angular (2026 Guide)
+description: Learn how to architect and scale enterprise-grade Angular applications using feature-based structure, standalone components, smart vs dumb components, state management strategies, micro-frontends, and modern best practices in 2026.
+date: 2026-02-13
 tags:
   - Angular
   - Enterprise Architecture
@@ -10,7 +10,7 @@ tags:
   - Scalable Applications
   - Software Architecture
   - Micro Frontends
-slug: building-scalable-enterprise-applications-angular-2026
+slug: building-scalable-enterprise-angular-2026
 ---
 
 # 🏗 Building Scalable Enterprise Applications with Angular (2026 Guide)
