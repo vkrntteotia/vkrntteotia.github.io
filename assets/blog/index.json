@@ -2,5 +2,13 @@
   "angular-performance.md",
   "deploy-portfolio-github.md",
   "clean-cache-swap-ubuntu.md",
-  "gitCommands.md"
+  "gitCommands.md",
+  "50-angular-interview-questions-2026.md",
+  "100-advanced-angular-mcqs.md",
+  "100-mid-level-angular-interview-mcqs-2026.md",
+  "angular-interview-guide-2026.md",
+  "angular-latest-topics-2026.md",
+  "angular-performance-optimization-2026.md",
+  "angular-signals-vs-rxjs-2026.md",
+  "building-scalable-enterprise-angular-2026.md"
 ]
