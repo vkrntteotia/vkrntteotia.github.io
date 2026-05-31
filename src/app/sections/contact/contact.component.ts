@@ -5,7 +5,7 @@ import { AdBannerComponent } from 'src/app/components/ad-banner/ad-banner.compon
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [AdBannerComponent,RouterLink],
+  imports: [AdBannerComponent, RouterLink],
   template: ` 
   <section class="container" id="contact">
     <h2>Contact</h2>
@@ -20,13 +20,11 @@ import { AdBannerComponent } from 'src/app/components/ad-banner/ad-banner.compon
         <p><b>Phone:</b> 7668390766</p>
       </div>
     </div>
-  <div style="display: flex;
-    justify-content: space-between;
-    align-items: baseline;"> 
-        <a routerLink="/privacy-policy">Privacy Policy</a>
-        <a routerLink="/privacy-policy">Terms & Conditions</a>
-  </div>
+    <div style="display: flex; justify-content: space-between;align-items: baseline;"> 
+          <a routerLink="/privacy-policy">Privacy Policy</a>
+          <a routerLink="/terms-and-conditions">Terms & Conditions</a>
+    </div>
   </section> 
   <app-ad-banner></app-ad-banner>`,
 })
-export class ContactComponent {}
+export class ContactComponent { }
