@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { AdBannerComponent } from 'src/app/components/ad-banner/ad-banner.component';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [AdBannerComponent],
+  imports: [AdBannerComponent,RouterLink],
   template: ` 
-  <app-ad-banner></app-ad-banner>
   <section class="container" id="contact">
     <h2>Contact</h2>
     <div class="card" style="text-align:center">
@@ -20,6 +20,13 @@ import { AdBannerComponent } from 'src/app/components/ad-banner/ad-banner.compon
         <p><b>Phone:</b> 7668390766</p>
       </div>
     </div>
-  </section>`,
+  <div style="display: flex;
+    justify-content: space-between;
+    align-items: baseline;"> 
+        <a routerLink="/privacy-policy">Privacy Policy</a>
+        <a routerLink="/privacy-policy">Terms & Conditions</a>
+  </div>
+  </section> 
+  <app-ad-banner></app-ad-banner>`,
 })
 export class ContactComponent {}

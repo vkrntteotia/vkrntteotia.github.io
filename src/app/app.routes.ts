@@ -4,6 +4,8 @@ import { BlogListComponent } from './pages/blog-list/blog-list.component';
 import { BlogDetailComponent } from './pages/blog-detail/blog-detail.component';
 import { CaseStudiesComponent } from './pages/case-studies/case-studies.component';
 import { CompanyWebsiteComponent } from './pages/company-website/company-website.component';
+import { TermsAndConditionsComponent } from './pages/terms-and-conditions/terms-and-conditions.component';
+import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -11,5 +13,13 @@ export const routes: Routes = [
   { path: 'blog/:slug', component: BlogDetailComponent },
   { path: 'case-studies', component: CaseStudiesComponent },
   { path: 'case-studies/company-website', component: CompanyWebsiteComponent },
+  {
+    path: 'privacy-policy',
+    component: PrivacyPolicyComponent
+  },
+  {
+    path: 'terms-and-conditions',
+    component: TermsAndConditionsComponent
+  },
   { path: '**', redirectTo: '' },
 ];

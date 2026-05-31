@@ -18,7 +18,7 @@ export class AppComponent {
   darkMode = false;
   title: any;
   constructor() {
-    console.log('appComponent');
+    // console.log('appComponent');
   }
   toggleDark() {
     this.darkMode = !this.darkMode;
