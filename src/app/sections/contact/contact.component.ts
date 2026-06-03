@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { NgIf } from '@angular/common';
+import { AfterViewInit, ChangeDetectorRef, Component, inject } from '@angular/core';
+import { NavigationEnd, Router, RouterLink } from '@angular/router';
+import { filter } from 'rxjs/operators';
 import { AdBannerComponent } from 'src/app/components/ad-banner/ad-banner.component';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [AdBannerComponent, RouterLink],
+  imports: [AdBannerComponent, RouterLink, NgIf],
   template: ` 
   <section class="container" id="contact">
     <h2>Contact</h2>
@@ -25,6 +27,24 @@ import { AdBannerComponent } from 'src/app/components/ad-banner/ad-banner.compon
           <a routerLink="/terms-and-conditions">Terms & Conditions</a>
     </div>
   </section> 
-  <app-ad-banner></app-ad-banner>`,
+  <app-ad-banner *ngIf="showAds"></app-ad-banner>`,
 })
-export class ContactComponent { }
+export class ContactComponent implements AfterViewInit { 
+   private cdr = inject(ChangeDetectorRef);
+    private router = inject(Router);
+    showAds = false;
+    ngAfterViewInit(): void {
+      this.router.events
+        .pipe(filter(event => event instanceof NavigationEnd))
+        .subscribe(() => {
+          const url = this.router.url;
+          this.showAds =
+            !url.startsWith('/terms-and-conditions') &&
+            !url.startsWith('/privacy-policy');
+          setTimeout(() => {
+            this.showAds = true;
+            this.cdr.detectChanges();
+          }, 2000);
+        });
+    }
+}

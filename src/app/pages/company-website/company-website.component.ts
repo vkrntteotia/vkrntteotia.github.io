@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { AfterViewInit, ChangeDetectorRef, Component, inject } from '@angular/core';
+import { CommonModule, NgIf } from '@angular/common';
 import { AdBannerComponent } from 'src/app/components/ad-banner/ad-banner.component';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   standalone: true,
-  imports: [CommonModule, AdBannerComponent],
+  imports: [CommonModule, AdBannerComponent, NgIf],
   styles: [
     `
       .page {
@@ -46,7 +48,25 @@ import { AdBannerComponent } from 'src/app/components/ad-banner/ad-banner.compon
         real-world case study.
       </p>
     </section>
-    <app-ad-banner></app-ad-banner>
+    <app-ad-banner *ngIf="showAds"></app-ad-banner>
   `,
 })
-export class CompanyWebsiteComponent {}
+export class CompanyWebsiteComponent implements AfterViewInit {
+  private cdr = inject(ChangeDetectorRef);
+  private router = inject(Router);
+  showAds = false;
+  ngAfterViewInit(): void {
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        const url = this.router.url;
+        this.showAds =
+          !url.startsWith('/terms-and-conditions') &&
+          !url.startsWith('/privacy-policy');
+        setTimeout(() => {
+          this.showAds = true;
+          this.cdr.detectChanges();
+        }, 2000);
+      });
+  }
+}

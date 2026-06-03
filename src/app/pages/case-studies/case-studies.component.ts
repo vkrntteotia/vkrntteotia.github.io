@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { AfterViewInit, ChangeDetectorRef, Component, inject } from '@angular/core';
+import { CommonModule, NgIf } from '@angular/common';
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { AdBannerComponent } from 'src/app/components/ad-banner/ad-banner.component';
+import { filter } from 'rxjs/operators';
 
 @Component({
   standalone: true,
-  imports: [CommonModule, RouterModule, AdBannerComponent],
+  imports: [CommonModule, RouterModule, AdBannerComponent, NgIf],
   template: `
     <section class="page">
       <h1>Case Studies</h1>
@@ -19,7 +20,7 @@ import { AdBannerComponent } from 'src/app/components/ad-banner/ad-banner.compon
         <a routerLink="/case-studies/company-website"> View Case Study → </a>
       </div>
     </section>
-    <app-ad-banner></app-ad-banner>
+    <app-ad-banner *ngIf="showAds"></app-ad-banner>
   `,
   styles: [
     `
@@ -37,4 +38,22 @@ import { AdBannerComponent } from 'src/app/components/ad-banner/ad-banner.compon
     `,
   ],
 })
-export class CaseStudiesComponent {}
+export class CaseStudiesComponent implements AfterViewInit {
+   private cdr = inject(ChangeDetectorRef);
+    private router = inject(Router);
+    showAds = false;
+    ngAfterViewInit(): void {
+      this.router.events
+        .pipe(filter(event => event instanceof NavigationEnd))
+        .subscribe(() => {
+          const url = this.router.url;
+          this.showAds =
+            !url.startsWith('/terms-and-conditions') &&
+            !url.startsWith('/privacy-policy');
+          setTimeout(() => {
+            this.showAds = true;
+            this.cdr.detectChanges();
+          }, 2000);
+        });
+    }
+}

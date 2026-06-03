@@ -1,8 +1,8 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, NO_ERRORS_SCHEMA, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { forkJoin } from 'rxjs';
+import { AfterViewInit, ChangeDetectorRef, Component, inject, NO_ERRORS_SCHEMA, OnInit } from '@angular/core';
+import { NavigationEnd, Router, RouterLink } from '@angular/router';
+import { filter, forkJoin } from 'rxjs';
 import { parseMarkdown } from '../../services/markdown-parser';
 import { FormsModule } from '@angular/forms';
 import { AdBannerComponent } from 'src/app/components/ad-banner/ad-banner.component';
@@ -19,7 +19,7 @@ interface Blog {
 @Component({
   selector: 'app-blog-list',
   standalone: true,
-  imports: [RouterLink, CommonModule, FormsModule,AdBannerComponent],
+  imports: [RouterLink, CommonModule, FormsModule, AdBannerComponent, NgIf],
   styles: [
     `
       .searchInputCss {
@@ -93,10 +93,10 @@ interface Blog {
       </button>
     </div>
   </section>
-  <app-ad-banner></app-ad-banner>
+  <app-ad-banner *ngIf="showAds"></app-ad-banner>
   `,
 })
-export class BlogListComponent implements OnInit {
+export class BlogListComponent implements OnInit, AfterViewInit {
   blogs: Blog[] = [];
   filteredBlogs: Blog[] = [];
 
@@ -105,10 +105,29 @@ export class BlogListComponent implements OnInit {
   pageSize = 5;
   searchTerm = '';
 
-  constructor(private http: HttpClient) {}
+  private cdr = inject(ChangeDetectorRef);
+  private router = inject(Router);
+  showAds = false;
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
     this.loadBlogs();
+  }
+
+  ngAfterViewInit(): void {
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        const url = this.router.url;
+        this.showAds =
+          !url.startsWith('/terms-and-conditions') &&
+          !url.startsWith('/privacy-policy');
+        setTimeout(() => {
+          this.showAds = true;
+          this.cdr.detectChanges();
+        }, 2000);
+      });
   }
 
   loadBlogs() {
@@ -147,11 +166,11 @@ export class BlogListComponent implements OnInit {
 
     this.filteredBlogs = term
       ? this.blogs.filter(
-          (blog) =>
-            blog.title.toLowerCase().includes(term) ||
-            blog.description.toLowerCase().includes(term) ||
-            blog.content.toLowerCase().includes(term)
-        )
+        (blog) =>
+          blog.title.toLowerCase().includes(term) ||
+          blog.description.toLowerCase().includes(term) ||
+          blog.content.toLowerCase().includes(term)
+      )
       : [...this.blogs];
 
     // reset to first page after search

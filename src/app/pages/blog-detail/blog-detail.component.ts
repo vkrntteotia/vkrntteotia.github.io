@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { AfterViewInit, ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
+import { CommonModule, NgIf } from '@angular/common';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 import { parseMarkdown } from '../../services/markdown-parser';
 import { AdBannerComponent } from 'src/app/components/ad-banner/ad-banner.component';
+import { filter } from 'rxjs/operators';
 
 interface Blog {
   title: string;
@@ -17,7 +18,7 @@ interface Blog {
 @Component({
   selector: 'app-blog-detail',
   standalone: true,
-  imports: [CommonModule,AdBannerComponent],
+  imports: [CommonModule, AdBannerComponent,NgIf],
   styles: [
     `
       .headerCss {
@@ -49,14 +50,32 @@ interface Blog {
     </div>
 
     <div *ngIf="!loading && !blog">Blog not found 😕</div>
-    <app-ad-banner></app-ad-banner>
+    <app-ad-banner *ngIf="showAds"></app-ad-banner>
     `,
 })
-export class BlogDetailComponent implements OnInit {
+export class BlogDetailComponent implements OnInit,AfterViewInit {
   blog?: Blog;
   loading = true;
+  private cdr = inject(ChangeDetectorRef);
+  private router = inject(Router);
+  showAds = false;
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) {}
+  constructor(private route: ActivatedRoute, private http: HttpClient) { }
+
+  ngAfterViewInit(): void {
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        const url = this.router.url;
+        this.showAds =
+          !url.startsWith('/terms-and-conditions') &&
+          !url.startsWith('/privacy-policy');
+        setTimeout(() => {
+          this.showAds = true;
+          this.cdr.detectChanges();
+        }, 2000);
+      });
+  }
 
   ngOnInit() {
     const slug = this.route.snapshot.paramMap.get('slug');
