@@ -67,13 +67,13 @@ export class BlogDetailComponent implements OnInit,AfterViewInit {
       .pipe(filter(event => event instanceof NavigationEnd))
       .subscribe(() => {
         const url = this.router.url;
-        this.showAds =
+        const showAds =
           !url.startsWith('/terms-and-conditions') &&
           !url.startsWith('/privacy-policy');
         setTimeout(() => {
-          this.showAds = true;
+          this.showAds = showAds;
           this.cdr.detectChanges();
-        }, 2000);
+        }, 3000);
       });
   }
 
